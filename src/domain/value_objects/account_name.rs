@@ -1,5 +1,11 @@
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone)]
 pub struct AccountName(String);
+
+impl AsRef<String> for AccountName {
+    fn as_ref(&self) -> &String {
+        &self.0
+    }
+}
 
 impl TryFrom<String> for AccountName {
     type Error = &'static str;
