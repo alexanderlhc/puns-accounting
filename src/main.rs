@@ -22,9 +22,17 @@ fn main() {
     let create_account_response2 =
         create_account::create_account(&mut repo, create_account_request2);
 
+    let account_name3 = String::from("");
+    let create_account_request3 = create_account::CreateAccountRequest {
+        name: account_name3,
+    };
+    let create_account_response3 =
+        create_account::create_account(&mut repo, create_account_request3);
+
     let in_repo = repo.fetch_all().unwrap();
     println!("{:?}", in_repo);
 
     println!("{:?}", create_account_response1);
     println!("{:?}", create_account_response2);
+    println!("{:?}", create_account_response3);
 }
